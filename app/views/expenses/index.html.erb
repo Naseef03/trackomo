@@ -1,2 +1,12 @@
-<h1>Expenses#index</h1>
-<p>Find me in app/views/expenses/index.html.erb</p>
+<h1>Expenses</h1>
+
+<%= link_to 'Add New Expense', new_expense_path %>
+
+<ul>
+  <% @expenses.each do |expense| %>
+    <li>
+      <strong><%= expense.name %></strong>: <%= number_to_currency(expense.amount) %> on <%= expense.date %>
+      <%= link_to 'View', expense_path(expense) %>
+    </li>
+  <% end %>
+</ul>
