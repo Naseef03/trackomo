@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  space: MyString
+  category: MyString
+  description: MyString
+  date: 2024-12-11
+  account: MyString
+  amount: 1.5
+
+two:
+  space: MyString
+  category: MyString
+  description: MyString
+  date: 2024-12-11
+  account: MyString
+  amount: 1.5
