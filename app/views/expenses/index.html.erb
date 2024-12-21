@@ -1,2 +1,23 @@
-<h1>Expenses#index</h1>
-<p>Find me in app/views/expenses/index.html.erb</p>
+<h1>Manage Expense</h1>
+
+<table>
+    <thead>
+        <td>Space</td>
+        <td>Date</td>
+        <td>Account</td>
+        <td>Category</td>
+        <td>Description</td>
+        <td>Amount</td>
+    </thead>
+
+    <% @expenses.each do |expense| %>
+        <tr>
+            <td><%= expense.space %></td>
+            <td><%= expense.date %></td>
+            <td><%= expense.account %></td>
+            <td><%= expense.category %></td>
+            <td><%= expense.description %></td>
+            <td><%= expense.amount %></td>
+        </tr>
+    <% end %>
+</table>
