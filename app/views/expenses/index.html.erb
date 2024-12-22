@@ -44,6 +44,7 @@
             <td><%= expense.category %></td>
             <td><%= expense.description %></td>
             <td><%= expense.amount %></td>
+            <td><%= button_to "Delete", expense, method: :delete, data: { turbo_confirm: "Are you sure?" } %></td>
         </tr>
     <% end %>
 </table>

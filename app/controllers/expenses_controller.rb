@@ -9,11 +9,17 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
 
     if @expense.save
-      redirect_to expenses_path, notice: "Expenses added Successfully"
+      redirect_to expenses_path, notice: "Expense added Successfully"
     else
       @expenses = Expense.all
       render :index
     end
+  end
+
+  def destroy
+    @expense = Expense.find(params[:id])
+    @expense.destroy
+    redirect_to expenses_path, notice: "Expense deleted Successfully"
   end
 
   private
