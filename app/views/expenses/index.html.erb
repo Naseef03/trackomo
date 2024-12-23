@@ -5,6 +5,10 @@
 
 <br>
 
+<div>
+    <%= @sum["Income"] - @sum["Expense"] %>
+</div>
+
 <%# List Expenses %>
 <table>
     <thead>
@@ -19,7 +23,7 @@
     <% @expenses.each do |expense| %>
         <tr>
             <td><%= expense.space %></td>
-            <td><%= expense.date %></td>
+            <td><%= expense.date.strftime("%d-%m-%Y") %></td>
             <td><%= expense.account %></td>
             <td><%= expense.category %></td>
             <td><%= expense.description %></td>

@@ -3,6 +3,7 @@ class ExpensesController < ApplicationController
 
   def index
     @expenses = current_user.expenses.all
+    @sum = @expenses.group("exp_inc").sum("amount")
 
     @expense = Expense.new
   end
@@ -27,6 +28,6 @@ class ExpensesController < ApplicationController
   private
 
     def expense_params
-      params.require(:expense).permit(:space, :category, :description, :date, :account, :amount)
+      params.require(:expense).permit(:space, :category, :description, :date, :account, :amount, :exp_inc)
     end
 end
