@@ -4,4 +4,6 @@ class Expense < ApplicationRecord
   validates :category, presence: true
   validates :account, presence: true
   validates :amount, comparison: { greater_than: 0 }
+
+  belongs_to :user
 end

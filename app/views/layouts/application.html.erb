@@ -23,12 +23,12 @@
   </head>
 
   <body>
+    <%# Navbar %>
+    <%= render "layouts/navbar" %>
+
     <%# Notifications %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <%# Navbar %>
-    <%= render "layouts/navbar" %>
 
     <%= yield %>
   </body>

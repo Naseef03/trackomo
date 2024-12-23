@@ -2,13 +2,13 @@ class ExpensesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @expenses = Expense.all
+    @expenses = current_user.expenses.all
 
     @expense = Expense.new
   end
 
   def create
-    @expense = Expense.new(expense_params)
+    @expense = current_user.expenses.new(expense_params)
 
     if @expense.save
       redirect_to expenses_path, notice: "Expense added Successfully"
